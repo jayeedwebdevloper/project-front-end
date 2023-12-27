@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+body {
+    scroll-behavior: smooth;
+    font-family: 'Roboto',
+        sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    padding: 0 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(171, 171, 171, 0.919);
+    border-radius: 20px;
+    width: 6px;
+    border: 2px solid #fff;
+    outline: 1px solid #00000088;
+}
+
+.carousel .thumbs-wrapper {
+    display: none;
+}
+
+.carousel.carousel-slider .control-arrow {
+    padding: 0 10px !important;
+}
+
+.carousel .control-dots .dot {
+    height: 15px;
+    width: 15px;
+}
+
+.carousel .control-dots .dot.selected,
+.carousel .control-dots .dot:hover {
+    outline: 3px solid #ffffff57;
+}
+
+.rolling-boxes {
+    height: 450px;
+}
+
+.subscribe-bg {
+    background-image: url(https://sayidan.kenzap.com/wp-content/uploads/2016/07/bg-newsletter4-3.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.social a svg {
+    fill: #9c9c9c;
+    height: 20px;
+    width: 30px;
+}
+
+.upcoming-banner {
+    background-image: url(https://sayidan.kenzap.com/wp-content/uploads/2016/07/slider4-3.jpg);
+    background-size: cover;
+    background-color: #1d0164cf;
+    background-blend-mode: multiply;
+}
+
+.about .banner {
+    background-image: url(https://sayidan.kenzap.com/wp-content/uploads/2016/07/cover-image-3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #00000027;
+    background-blend-mode: multiply;
+}
+
+.about .tab.tab-active:not(.tab-disabled):not([disabled]),
+.about .tab:is(input:checked) {
+    border-color: #ffbe00 !important;
+    --tw-border-opacity: 1;
+    --tw-text-opacity: 1;
+}
+
+.about .tabs-bordered>.tab {
+    border-color: transparent !important;
+}
+
+.react-tel-input .form-control {
+    width: 100% !important;
+    border-radius: 0;
+    height: 2.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border: transparent;
+    padding-left: 55px;
+}
+
+.react-tel-input .flag-dropdown {
+    background-color: transparent;
+    border: transparent;
+    padding-left: 10px;
+}
+
+.card-logo {
+    left: -20%;
+    top: -40%;
+    width: 200px;
+    height: 200px;
+    transform: rotate(29deg);
+    border-radius: 0 0 20px 0;
+}
+
+.card-logo img {
+    left: 45%;
+    z-index: 100;
+    top: 40%;
+    width: 70px;
+    height: 70px;
+    transform: rotate(-29deg);
+}
+
+.drawer-side li a {
+    color: #fff !important;
+}
