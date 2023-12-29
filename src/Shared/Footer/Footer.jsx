@@ -8,7 +8,7 @@ const Footer = () => {
     const { data: socials = [] } = useQuery({
         queryKey: ['social'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:3000/social');
+            const res = await fetch('https://back-end-bice-eight.vercel.app/social');
             const data = await res.json();
             return data;
         }

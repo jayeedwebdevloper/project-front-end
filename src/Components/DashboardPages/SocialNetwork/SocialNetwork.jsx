@@ -14,7 +14,7 @@ const SocialNetwork = ({ setIndex1 }) => {
     const { data: social = [], refetch } = useQuery({
         queryKey: ['social'],
         queryFn: async () => {
-            const res = await fetch("http://localhost:3000/social");
+            const res = await fetch("https://back-end-bice-eight.vercel.app/social");
             const data = await res.json();
             return data;
         }
@@ -28,7 +28,7 @@ const SocialNetwork = ({ setIndex1 }) => {
             social, link
         }
 
-        fetch("http://localhost:3000/add-social", {
+        fetch("https://back-end-bice-eight.vercel.app/add-social", {
             method: "POST",
             headers: {
                 "content-type": "application/json"
@@ -50,7 +50,7 @@ const SocialNetwork = ({ setIndex1 }) => {
     const deleteSocial = (id) => {
         const confirm = window.confirm("Are You Sure to Delete That Slide ?");
         if (confirm) {
-            fetch(`http://localhost:3000/delete-social/${id}`, {
+            fetch(`https://back-end-bice-eight.vercel.app/delete-social/${id}`, {
                 method: "DELETE"
             })
                 .then(res => res.json())

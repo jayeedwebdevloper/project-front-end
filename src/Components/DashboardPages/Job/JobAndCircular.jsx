@@ -16,7 +16,7 @@ const JobAndCircular = ({ setIndex1 }) => {
     const { data: jobs = [], refetch } = useQuery({
         queryKey: ['jobs'],
         queryFn: async () => {
-            const res = await fetch("http://localhost:3000/jobs");
+            const res = await fetch("https://back-end-bice-eight.vercel.app/jobs");
             const data = await res.json();
             return data;
         }
@@ -62,7 +62,7 @@ const JobAndCircular = ({ setIndex1 }) => {
                         logo: data.url
                     }
 
-                    fetch('http://localhost:3000/add-job-news', {
+                    fetch('https://back-end-bice-eight.vercel.app/add-job-news', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json'
@@ -85,7 +85,7 @@ const JobAndCircular = ({ setIndex1 }) => {
     const deleteJob = (id) => {
         const confirm = window.confirm("Are You Sure to Delete That Job ?");
         if (confirm) {
-            fetch(`http://localhost:3000/jobs/${id}`, {
+            fetch(`https://back-end-bice-eight.vercel.app/jobs/${id}`, {
                 method: "DELETE"
             })
                 .then(res => res.json())

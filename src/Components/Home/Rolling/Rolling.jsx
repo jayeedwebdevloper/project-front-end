@@ -13,10 +13,10 @@ const Rolling = () => {
         }
     })
 
-    const {data: careerData = []} = useQuery({
+    const { data: careerData = [] } = useQuery({
         queryKey: ["careerData"],
-        queryFn: async() => {
-            const res = await fetch("http://localhost:3000/jobs");
+        queryFn: async () => {
+            const res = await fetch("https://back-end-bice-eight.vercel.app/jobs");
             const data = await res.json();
             return data;
         }
