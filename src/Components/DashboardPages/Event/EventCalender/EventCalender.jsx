@@ -103,6 +103,7 @@ const EventCalender = ({ setIndex1 }) => {
                                     <label htmlFor="details" className='label'>Details</label>
                                     <textarea id='details' name='details' {...register("details", { required: true })} className='textarea textarea-bordered rounded-none w-full h-20' type="text" />
                                 </div>
+                                
                                 <div className="py-2">
                                     <label htmlFor="link" className='label'>Button Link <sub>Ex:( /event )</sub></label>
                                     <input id='link' name='link' {...register("link")} className='input input-bordered rounded-none w-full h-10' placeholder='/organization/past-leaders' type="text" />
