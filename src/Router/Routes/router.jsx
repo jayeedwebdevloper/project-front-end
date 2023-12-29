@@ -24,6 +24,11 @@ import Slider from '../../Components/DashboardPages/Slider/Slider';
 import JobAndCircular from '../../Components/DashboardPages/Job/JobAndCircular';
 import SocialNetwork from '../../Components/DashboardPages/SocialNetwork/SocialNetwork';
 import EventCalender from '../../Components/DashboardPages/Event/EventCalender/EventCalender';
+import Interview from '../../Components/DashboardPages/Interview/Interview';
+import NewsData from '../../Components/DashboardPages/News/NewsData/NewsData';
+import NewsPage from '../../Components/NewsPage/NewsPage';
+import News from '../../Components/NewsPage/SingleNews/News';
+import JobNewsPage from '../../Components/JobNewsPage/JobNewsPage';
 
 const router = createBrowserRouter([
     {
@@ -75,6 +80,24 @@ const router = createBrowserRouter([
                 element: <About></About>
             },
             {
+                path: '/all-news',
+                element: <NewsPage></NewsPage>
+            },
+            {
+                path: '/all-jobs',
+                element: <JobNewsPage></JobNewsPage>
+            },
+            {
+                path: '/news/:newsId',
+                loader: ({params}) => fetch(`http://localhost:3000/news/${params.newsId}`),
+                element: <News></News>
+            },
+            {
+                path: '/jobs/:jobsId',
+                loader: ({params}) => fetch(`http://localhost:3000/jobs/${params.jobsId}`),
+                element: <News></News>
+            },
+            {
                 path: '/register',
                 element: <Register></Register>
             },
@@ -107,6 +130,10 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard876admingo/slider',
                 element: <Slider></Slider>
+            },
+            {
+                path: '/dashboard876admingo/interview',
+                element: <Interview></Interview>
             },
             {
                 path: '/dashboard876admingo/job-news-circular',

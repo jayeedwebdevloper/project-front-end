@@ -48,7 +48,7 @@ const SocialNetwork = ({ setIndex1 }) => {
     }
 
     const deleteSocial = (id) => {
-        const confirm = window.confirm("Are You Sure to Delete That Slide ?");
+        const confirm = window.confirm("Are You Sure to Delete That Link ?");
         if (confirm) {
             fetch(`https://back-end-bice-eight.vercel.app/delete-social/${id}`, {
                 method: "DELETE"
@@ -56,7 +56,7 @@ const SocialNetwork = ({ setIndex1 }) => {
                 .then(res => res.json())
                 .then(data => {
                     if (data.deletedCount > 0) {
-                        toast.success("Slide Deleted Successfully");
+                        toast.success("Link Deleted Successfully");
                         refetch()
                     }
                 })
