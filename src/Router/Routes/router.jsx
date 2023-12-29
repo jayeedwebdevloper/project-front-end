@@ -21,6 +21,9 @@ import PrivateRouter from '../PrivateRouter/PrivateRouter';
 import Dashboard from '../../Layout/Dashboard';
 import NewsAndNotice from '../../Components/DashboardPages/News/NewsAndNotice';
 import Slider from '../../Components/DashboardPages/Slider/Slider';
+import JobAndCircular from '../../Components/DashboardPages/Job/JobAndCircular';
+import SocialNetwork from '../../Components/DashboardPages/SocialNetwork/SocialNetwork';
+import EventCalender from '../../Components/DashboardPages/Event/EventCalender/EventCalender';
 
 const router = createBrowserRouter([
     {
@@ -90,16 +93,32 @@ const router = createBrowserRouter([
         ]
     },
     {
-        path: '/dashboard',
+        path: '/dashboard876admingo',
         element: <PrivateRouter><Dashboard></Dashboard></PrivateRouter>,
         children: [
             {
-                path: '/dashboard/add-news',
+                path: '/dashboard876admingo',
+                element: <Slider></Slider>
+            },
+            {
+                path: '/dashboard876admingo/add-news',
                 element: <NewsAndNotice></NewsAndNotice>
             },
             {
-                path: '/dashboard/slider',
+                path: '/dashboard876admingo/slider',
                 element: <Slider></Slider>
+            },
+            {
+                path: '/dashboard876admingo/job-news-circular',
+                element: <JobAndCircular></JobAndCircular>
+            },
+            {
+                path: '/dashboard876admingo/add-social',
+                element: <SocialNetwork></SocialNetwork>
+            },
+            {
+                path: '/dashboard876admingo/event-calender',
+                element: <EventCalender></EventCalender>
             },
         ]
     }

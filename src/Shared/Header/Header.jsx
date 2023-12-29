@@ -10,7 +10,6 @@ import useAdmin from '../../hook/useAdmin';
 
 const Header = () => {
     const { userInfo, logOut } = useContext(AuthContext);
-    console.log(userInfo?.email);
     const [isAdmin] = useAdmin(userInfo?.email);
     const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Agu", "Sep", "Oct", "Nov", "Dec"];
     const date = new Date();
@@ -80,9 +79,9 @@ const Header = () => {
             <div className="container mx-auto px-4 pb-3 md:px-5">
                 <div className="flex flex-col lg:flex-row items-center">
                     <div className="w-full lg:w-1/3 flex">
-                        <p className='text-white w-1/2 lg:w-1/3'>{nowTime}</p>
-                        <div className="px-5 w-1/2 lg:w-2/3">
-                            <marquee className={'text-white'} direction="left">
+                        <p className='text-white w-1/3 text-xs xl:text-lg lg:w-1/3'>{nowTime}</p>
+                        <div className="ps-0 w-2/3 lg:w-2/3">
+                            <marquee className={'text-white text-sm xl:text-lg'} direction="left">
                                 <div className="flex gap-2">
                                     {
                                         news ? news.map((data, i) => <p key={i}>{data.newNews},</p>).reverse() : undefined
@@ -139,7 +138,7 @@ const Header = () => {
                                             </li>
                                             {
                                                 isAdmin ? <li>
-                                                    <Link to={'/dashboard'} className="justify-between">
+                                                    <Link to={'/dashboard876admingo'} className="justify-between">
                                                         Dashboard
                                                     </Link>
                                                 </li> : undefined

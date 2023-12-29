@@ -123,3 +123,7 @@ body {
 .drawer-side li a {
     color: #fff !important;
 }
+
+.panelbg {
+    background-color: transparent !important;
+}

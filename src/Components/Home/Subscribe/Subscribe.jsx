@@ -19,7 +19,7 @@ const Subscribe = () => {
                     {
                         almuniSocial.map((data, i) =>
                             <div key={i} className='flex gap-4 justify-center items-center'>
-                                {data.icon} <p className='text-white text-xl'>{data.account}</p>
+                                {data.icon} <p className='text-white text-md md:text-xl'>{data.account}</p>
                             </div>
                         )
                     }
@@ -27,7 +27,7 @@ const Subscribe = () => {
             </div>
             <div className="container mx-auto px-4 lg:px-5">
                 <div className="flex items-center flex-col justify-center py-24">
-                    <h1 className='text-4xl text-white lg:text-5xl'>Don't Miss Awesome Story From Our Alumni</h1>
+                    <h1 className='text-2xl text-white md:text-5xl'>Don't Miss Awesome Story From Our Alumni</h1>
                     <p className='text-md text-white py-4'>Duis autem vel eum iriure dolor in hendrerit in vulputate</p>
 
                     <form className='w-full flex items-center justify-center flex-col'>

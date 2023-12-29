@@ -20,9 +20,9 @@ const Interviews = () => {
                             <img className='w-full' src={data.photo} alt="" />
                         </div>
                         <div className="lg:w-1/2 px-4">
-                            <h1 className='text-5xl py-4'>{data.name}</h1>
+                            <h1 className='text-2xl md:text-5xl py-4'>{data.name}</h1>
                             <p className='text-md tracking-wider text-slate-400 pb-14'>{data.comment}</p>
-                            <button className='btn font-thin tracking-widest text-xl border-warning border-[3px] px-4 py-3 h-auto bg-white capitalize rounded-none text-black hover:bg-warning hover:border-warning'>see {data.name} story</button>
+                            <button className='btn font-thin tracking-widest md:text-xl text-sm border-warning border-[3px] px-4 py-3 h-auto bg-white capitalize rounded-none text-black hover:bg-warning hover:border-warning'>see {data.name} story</button>
                         </div>
                     </div>)
                }

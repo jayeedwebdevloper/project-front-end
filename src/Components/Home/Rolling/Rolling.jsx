@@ -13,28 +13,14 @@ const Rolling = () => {
         }
     })
 
-    const careerData = [
-        {
-            photo: "https://sayidan.kenzap.com/wp-content/uploads/2016/07/procera-logo-edited-3.png",
-            title: "Technical Director",
-            Details: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda enim velit quasi quae alias non illo, modi ex dolore pariatur adipisci doloribus voluptatem optio consequatur quibusdam ad quia possimus nobis."
-        },
-        {
-            photo: "https://sayidan.kenzap.com/wp-content/uploads/2016/07/Salsify_Logo_Blue_Flower_Gray_Text-01-3.png",
-            title: "Assistant",
-            Details: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda enim velit quasi quae alias non illo, modi ex dolore pariatur adipisci doloribus voluptatem optio consequatur quibusdam ad quia possimus nobis."
-        },
-        {
-            photo: "https://sayidan.kenzap.com/wp-content/uploads/2016/07/navia-logo-final-300-rgb_gradient-fullcolor-mark-type-tag-3.png",
-            title: "Developer",
-            Details: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda enim velit quasi quae alias non illo, modi ex dolore pariatur adipisci doloribus voluptatem optio consequatur quibusdam ad quia possimus nobis."
-        },
-        {
-            photo: "https://sayidan.kenzap.com/wp-content/uploads/2016/07/chargify-logo-dark-37df595c-3.png",
-            title: "Manager",
-            Details: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda enim velit quasi quae alias non illo, modi ex dolore pariatur adipisci doloribus voluptatem optio consequatur quibusdam ad quia possimus nobis."
+    const {data: careerData = []} = useQuery({
+        queryKey: ["careerData"],
+        queryFn: async() => {
+            const res = await fetch("http://localhost:3000/jobs");
+            const data = await res.json();
+            return data;
         }
-    ];
+    })
 
     const eventsData = [
         {
@@ -102,18 +88,18 @@ const Rolling = () => {
                             careerData.map((data, i) =>
                                 <div key={i} className='flex gap-4 mb-8'>
                                     <div className="h-24 p-2 flex items-center justify-center w-24 border rounded-full">
-                                        <img className="w-full" src={data.photo} alt="" />
+                                        <img className="w-full" src={data.logo} alt="" />
                                     </div>
                                     <div className="w-2/3">
-                                        <Link className='pb-3 text-lg font-medium tracking-wider'>{data.title}</Link>
+                                        <Link to={`/jobs/${data._id}`} className='pb-3 text-lg font-medium tracking-wider'>{data.title}</Link>
                                         <p className='text-slate-500'>
                                             {
-                                                data.Details.substring(0, 50)
+                                                data.details.substring(0, 50)
                                             }
                                         </p>
                                     </div>
                                 </div>
-                            )
+                            ).reverse()
                         }
                     </div>
                     <button className='bg-slate-200 text-xl font-thin text-slate-700 btn w-full mx-auto rounded-none'>View All Opportunity</button>
